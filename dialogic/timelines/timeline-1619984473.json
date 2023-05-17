@@ -1,0 +1,23 @@
+{
+	"events": [
+		{
+			"definition": "1620143654-894",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Hmm...\nIzgleda da ste naišli na zid!\nZašto ne pokušate [color=#cc0000]SKAKATI PO ZIDU[/color]?\nJednostavno se krećite prema zidu i skočite i zalijepit ćete se na njega poput ljepila."
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619984473.json",
+		"name": "WallJumpTutorialCRO"
+	}
+}

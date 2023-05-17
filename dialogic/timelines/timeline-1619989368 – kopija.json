@@ -1,0 +1,45 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Okay, okay, I know it's a lot to take in..."
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Want me to teach you how to fight?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"change_timeline": "timeline-1619983793.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "[tornado radius=5 freq=2]Whatever...[/tornado]"
+		},
+		{
+			"endbranch": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619989368 – kopija.json",
+		"name": "Pos1StartTalkAgain"
+	}
+}

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/UserInterface/BossHealthBar.gd" type="Script" id=1]
+[ext_resource path="res://assets/mine/BossHpBar/BossHpBarOver.png" type="Texture" id=2]
+[ext_resource path="res://assets/mine/BossHpBar/BossHpBarBorder.png" type="Texture" id=3]
+[ext_resource path="res://assets/mine/BossHpBar/BossHpBarUnder.png" type="Texture" id=4]
+
+[node name="BossHpbar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthUnder" type="TextureProgress" parent="."]
+margin_right = 32.0
+margin_bottom = 7.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 0.921569, 0.658824, 0.0470588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthOver" type="TextureProgress" parent="."]
+margin_right = 640.0
+margin_bottom = 32.0
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+tint_progress = Color( 0, 1, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateTween" type="Tween" parent="."]
+
+[node name="FlashTween" type="Tween" parent="."]
+
+[node name="PulseTween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
+
+[node name="StartUpTween" type="Tween" parent="."]
+
+[node name="DelayUntilTween" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="tween_completed" from="StartUpTween" to="." method="_on_StartUpTween_tween_completed"]
+[connection signal="timeout" from="DelayUntilTween" to="." method="_on_DelayUntilTween_timeout"]

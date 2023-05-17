@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UserInterface/PlayButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI_Button_theme_bitPotion.tres" type="Theme" id=2]
+
+[node name="ChangeSceneButton" type="Button"]
+margin_right = 190.0
+margin_bottom = 49.0
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Počni igru"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

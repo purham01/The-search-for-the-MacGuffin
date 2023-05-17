@@ -1,0 +1,54 @@
+{
+	"events": [
+		{
+			"definition": "1620143640-403",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Hold up!\nLook over there!\nThere's a bandit just waiting to ambush you...\nWhat say you get him first?"
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Want me to teach you how to fight?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"change_timeline": "timeline-1619983793.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Ugh...\nKids these days... "
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		},
+		{
+			"endbranch": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619983846 – kopija.json",
+		"name": "NoticeBandit"
+	}
+}

@@ -1,0 +1,111 @@
+{
+	"events": [
+		{
+			"condition": "==",
+			"definition": "1621112656-648",
+			"value": "0"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Svaka čast na korištenju moje posebne taktike bježanja od neprijatelja!\nDobro sam vas podučio!"
+		},
+		{
+			"emit_signal": "laugh"
+		},
+		{
+			"wait_seconds": 1.5
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Misliš li da je boss bio prelagan? Želiš li okušati svoju sreću u opciji preko 9000 tisuća?"
+		},
+		{
+			"choice": "Samo daj!",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Dobro onda, pripremi se!"
+		},
+		{
+			"definition": "1621112656-648",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"emit_signal": "reset_level"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		},
+		{
+			"choice": "Ne, ne, bilo je sasvim u redu!",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Dobro onda."
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"condition": "==",
+			"definition": "1621112656-648",
+			"value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Pa, sad ste stvarno dokazali!\nSvaka čast, bolje to učiniti nisam mogao ni ja sam!"
+		},
+		{
+			"emit_signal": "laugh"
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"condition": "==",
+			"definition": "1620927909-648",
+			"value": "0"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Hej, mislim da onaj bandit želi popričati s tobom.\nI da..."
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Sretno u daljnim avanturama!"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1620583432.json",
+		"name": "WizardAfterBossCRO"
+	}
+}

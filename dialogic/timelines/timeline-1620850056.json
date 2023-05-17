@@ -1,0 +1,56 @@
+{
+	"events": [
+		{
+			"character": "character-1620663463.json",
+			"portrait": "",
+			"text": "Hvala ti što si ubila to čudovište...\nSamo se pojavilo od niotkuda i počelo je napadati naše ljude.\nIzgleda da sam ja jedini ostao...."
+		},
+		{
+			"character": "character-1620663463.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Gdje ću li sada..."
+		},
+		{
+			"choice": "Želiš li se pridružiti meni?",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1620663463.json",
+			"portrait": "",
+			"text": "Oprosti, ali obično radim sam.\nMožda drugi put."
+		},
+		{
+			"choice": "Pa... Žao mi te.",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1620663463.json",
+			"portrait": "",
+			"text": "[shake]Ne trebam tvoje sažaljenje![/shake]"
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"definition": "1620927909-648",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1620850056.json",
+		"name": "BanditAfterBossCRO"
+	}
+}

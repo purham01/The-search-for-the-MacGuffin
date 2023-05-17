@@ -1,0 +1,111 @@
+{
+	"events": [
+		{
+			"condition": "==",
+			"definition": "1621112656-648",
+			"value": "0"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Great job on using my secret technique of running away!\nI have taught you well!"
+		},
+		{
+			"emit_signal": "laugh"
+		},
+		{
+			"wait_seconds": 1.5
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Think the boss was too easy? Would you like to try your luck in the over 9000 mode?"
+		},
+		{
+			"choice": "Bring it on!",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Okay then, get ready."
+		},
+		{
+			"definition": "1621112656-648",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"emit_signal": "reset_level"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		},
+		{
+			"choice": "No, no it was fine!",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Well, all right then."
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"condition": "==",
+			"definition": "1621112656-648",
+			"value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Well, now you've really proven yourself!\nGreat job, I couldn't have done it better myself!"
+		},
+		{
+			"emit_signal": "laugh"
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"condition": "==",
+			"definition": "1620927909-648",
+			"value": "0"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Hey, I think that bandit over there wants to talk to you.\nOh, also..."
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Good luck on your next adventures!"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1620850270.json",
+		"name": "WizardAfterBoss"
+	}
+}

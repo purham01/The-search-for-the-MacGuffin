@@ -1,0 +1,69 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Lijep pozdrav!\nPoslali su me ovdje kako bih vas podučio o nekim osnovnim stvarima.\nIzgleda da su neki banditi našli svoj put do vaše kuće, mogli bismo pogledati od kuda su došli..."
+		},
+		{
+			"definition": "1620144375-171",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Želite li da vas naučim kako igrati?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Slušajte pažljivo..."
+		},
+		{
+			"definition": "1619994548-146",
+			"operation": "=",
+			"set_value": "0"
+		},
+		{
+			"change_timeline": "timeline-1619981553.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Pa...\nBiti ću ovdje ako se ikada predomislite..."
+		},
+		{
+			"definition": "1619994548-146",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"emit_signal": "tutorial_changed"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619978773.json",
+		"name": "LevelStartCRO"
+	}
+}

@@ -1,0 +1,216 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/Enemies and Bosses/Undead.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://src/Actors/UndeadExecutioner.gd" type="Script" id=2]
+[ext_resource path="res://assets/Enemies and Bosses/Undead executioner/OriginalPallete.png" type="Texture" id=3]
+[ext_resource path="res://src/StateMachine/UndeadExecutionerSM.gd" type="Script" id=4]
+
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+uniform sampler2D palette;
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0,1.0) = 0.0;
+
+void fragment(){
+	vec4 rgba = texture(TEXTURE, UV);
+	vec4 final_color = texture(palette, vec2(rgba.r,rgba.g));
+	final_color.a = rgba.a;
+	
+	vec4 color = final_color;
+	color.rgb = mix(color.rgb, flash_color.rgb,flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+render_priority = 1
+shader = SubResource( 1 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+shader_param/palette = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 5.33333
+height = 44.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 13.3333, 26.6667 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 28.6667
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 270.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 100.669
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/flash_modifier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/flash_modifier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[node name="Undead Executioner" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 256
+collision_mask = 8
+script = ExtResource( 2 )
+move_speed = 60.0
+_damage = 50
+_defense = 40
+max_health = 2000.0
+experience = 1200
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
+frames = ExtResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -2.66667, 6 )
+shape = SubResource( 3 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+visible = false
+position = Vector2( -2.62357, 16.7119 )
+scale = Vector2( 1.80431, 1.60343 )
+pause_animated_sprites = false
+process_parent = true
+physics_process_parent = true
+
+[node name="HitBox" type="Area2D" parent="." groups=["Hitboxes"]]
+visible = false
+position = Vector2( -2.93891, -47.3333 )
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+modulate = Color( 0.231373, 0.137255, 0.894118, 1 )
+position = Vector2( 0, 53.3333 )
+shape = SubResource( 4 )
+
+[node name="AOEArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 256
+
+[node name="Skill1" type="CollisionPolygon2D" parent="AOEArea"]
+position = Vector2( -2.667, 34.667 )
+polygon = PoolVector2Array( -42.6667, -42.6667, -37.4519, -44.3414, -21.2113, -45.0089, -14.2034, -45.565, -6.97303, -46.5662, 4.83621, -49.3422, 35.3333, -46, 8.196, -42.0976, 22, -24, 5.20395, -35.6572, 0.216497, -24.8787, 25.3333, -22, -0.0763601, -17.1997, 10, -15.3333, -4.63706, -11.7491, -5.33333, -1.33333, -10.1989, -8.52323, -38, -12, -10.7551, -16.0873, -26.1369, -20.049, -12.6461, -23.5402, -12.9798, -27.5447, -43.3474, -33.2178, -14.2034, -35.8874, -14.5371, -40.0032 )
+disabled = true
+
+[node name="AttackArea" type="Area2D" parent="." groups=["AttackAreas"]]
+position = Vector2( -2.66667, 34.6667 )
+collision_layer = 256
+collision_mask = 3
+
+[node name="Swing1" type="CollisionPolygon2D" parent="AttackArea"]
+visible = false
+position = Vector2( 108.939, -26.6667 )
+polygon = PoolVector2Array( -96.2722, 16, -78.9389, 5.33333, -70.9389, -10.6667, -71.6055, -22.6667, -82.9389, -34.6667, -100.272, -38, -116.939, -31.3333, -125.606, -16.6667, -126.939, -22, -125.606, -31.3333, -108.272, -44, -86.9389, -45.3333, -67.6055, -36, -60.2722, -22, -60.2722, -7.33334, -64.2722, 4.66666, -79.6055, 16.6667 )
+disabled = true
+
+[node name="Swing2" type="CollisionPolygon2D" parent="AttackArea"]
+visible = false
+position = Vector2( 0.666667, 0 )
+polygon = PoolVector2Array( -29.4692, -29.6028, -5.98893, -18.5241, 19.1449, -21.5004, 33.5307, -29.1067, 36.1764, -57.0516, 42.7906, -51.2642, 46.7591, -36.5477, 45.9323, -24.1461, 35.3496, -16.5398, 20.3024, -11.0831, 9.22366, -9.42959, -6.98106, -10.5871, -21.3669, -16.2091, -30.1307, -27.4532 )
+disabled = true
+
+[node name="AttackDetectionArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectionArea"]
+position = Vector2( 16, -6 )
+shape = SubResource( 5 )
+
+[node name="EscapeArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeArea"]
+shape = SubResource( 6 )
+
+[node name="ResetCooldownArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResetCooldownArea"]
+shape = SubResource( 7 )
+
+[node name="PlayerDetectionRaycasters" type="Node2D" parent="."]
+visible = false
+position = Vector2( -2.93891, 32.6667 )
+
+[node name="PlayerDetectionRaycaster" type="RayCast2D" parent="PlayerDetectionRaycasters"]
+position = Vector2( 0, -20.0808 )
+enabled = true
+cast_to = Vector2( 250, 0 )
+collision_mask = 3
+
+[node name="PlayerDetectionRaycasterBack" type="RayCast2D" parent="PlayerDetectionRaycasters"]
+position = Vector2( 0, -20.0808 )
+enabled = true
+cast_to = Vector2( -15, 0 )
+collision_mask = 3
+
+[node name="SpritePositions" type="Node2D" parent="."]
+position = Vector2( -2.93891, 11.3333 )
+
+[node name="Sprite1" type="Position2D" parent="SpritePositions"]
+position = Vector2( -31.2189, -21.6945 )
+
+[node name="Sprite2" type="Position2D" parent="SpritePositions"]
+position = Vector2( -21.3333, -53.3333 )
+
+[node name="Sprite3" type="Position2D" parent="SpritePositions"]
+position = Vector2( 21.3333, -53.3333 )
+
+[node name="Sprite4" type="Position2D" parent="SpritePositions"]
+position = Vector2( 42.6667, -32 )
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "START"
+anims/START = SubResource( 8 )
+anims/damage = SubResource( 9 )
+
+[connection signal="killed" from="." to="StateMachine" method="_on_Undead_Executioner_killed"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
+[connection signal="area_entered" from="AOEArea" to="." method="_on_AOEArea_area_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_AttackArea_area_entered"]
+[connection signal="body_entered" from="AttackDetectionArea" to="." method="_on_AttackDetectionArea_body_entered"]
+[connection signal="body_exited" from="AttackDetectionArea" to="." method="_on_AttackDetectionArea_body_exited"]
+[connection signal="body_exited" from="EscapeArea" to="." method="_on_EscapeArea_body_exited"]
+[connection signal="body_exited" from="ResetCooldownArea" to="." method="_on_ResetCooldownArea_body_exited"]

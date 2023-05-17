@@ -1,0 +1,18 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Možete koristiti [color=#A5EFAC]A i D[/color] kako bi se pomicali lijevo i desno.\nDa biste skočili jednostavno pristinite [color=#A5EFAC]W[/color].\nTakođer se možete zaletjeti naprijed tipkom [color=#A5EFAC]SHIFT ili K[/color].\nAko imate poteškoća uvijek možete pritisnuti [color=#A5EFAC]E[/color] kako bi opet razgovarali sa mnom.\nOh, i, da, ako naiđete na škrinje, zašto ih ne pokušate udariti nekoliko puta.\nMožda se iznenadite..."
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619981553.json",
+		"name": "MovementTutorialCRO"
+	}
+}

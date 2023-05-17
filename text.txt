@@ -1,0 +1,34 @@
+
+
+shader_type canvas_item;
+uniform sampler2D palette;
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0,1.0) = 0.0;
+uniform float width : hint_range(0.0, 16.0);
+uniform vec4 outline_color : hint_color;
+
+void fragment(){
+	vec4 rgba = texture(TEXTURE, UV);
+	vec4 base_color = texture(palette, vec2(rgba.r,rgba.g));
+	base_color.a = rgba.a;
+	
+	vec4 color = base_color;
+	color.rgb = mix(color.rgb, flash_color.rgb,flash_modifier);
+	
+	vec2 size = vec2(width) / vec2(textureSize(TEXTURE, 0));
+   
+    vec4 sprite_color = color;
+   
+    float alpha = sprite_color.a;
+    alpha += texture(TEXTURE, UV + vec2(0.0, -size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(size.x, 0.0)).a;
+    alpha += texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(0.0, size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size.x, 0.0)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+   
+    vec3 final_color = mix(outline_color.rgb, sprite_color.rgb, sprite_color.a);
+    COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
+}

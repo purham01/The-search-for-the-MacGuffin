@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Try and Solve This Loop.ogg-190b461380b9c53b85d31f7e23162eaa.oggstr"
+
+[deps]
+
+source_file="res://assets/Sounds/music/Try and Solve This Loop.ogg"
+dest_files=[ "res://.import/Try and Solve This Loop.ogg-190b461380b9c53b85d31f7e23162eaa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

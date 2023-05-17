@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/mine/UndeadSprite.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://src/Actors/UndeadSprite.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.97826
+
+[node name="Sprite" type="Area2D" groups=[
+"undead_sprites",
+]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 4 )
+_damage = 50
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "appear"
+frame = 4
+playing = true
+
+[node name="ChargeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.26277, 6.45415 )
+shape = SubResource( 1 )
+disabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_Sprite_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Sprite_body_entered"]
+[connection signal="ready" from="." to="." method="_on_Sprite_ready"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_ChargeTimer_timeout"]

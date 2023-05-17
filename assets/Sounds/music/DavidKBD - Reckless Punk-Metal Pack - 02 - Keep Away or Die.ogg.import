@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DavidKBD - Reckless Punk-Metal Pack - 02 - Keep Away or Die.ogg-4aeacf17c78fd16279786665a7dfdefa.oggstr"
+
+[deps]
+
+source_file="res://assets/Sounds/music/DavidKBD - Reckless Punk-Metal Pack - 02 - Keep Away or Die.ogg"
+dest_files=[ "res://.import/DavidKBD - Reckless Punk-Metal Pack - 02 - Keep Away or Die.ogg-4aeacf17c78fd16279786665a7dfdefa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

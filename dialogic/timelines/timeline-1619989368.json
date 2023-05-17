@@ -1,0 +1,45 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "U redu, u redu, znam da je puno toga za upiti."
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Želiš li da te naučim kako se boriti?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"change_timeline": "timeline-1619983793 – kopija.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "[tornado radius=5 freq=2]Što god...[/tornado]"
+		},
+		{
+			"endbranch": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619989368.json",
+		"name": "Pos1StartTalkAgainCRO"
+	}
+}

@@ -1,0 +1,307 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/Actors/WarriorPC.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/mine/stringstarfielsTILESET.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/Tilesets and world/stringstar fields/background_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Tilesets and world/stringstar fields/background_0.png" type="Texture" id=4]
+[ext_resource path="res://assets/Tilesets and world/stringstar fields/background_2.png" type="Texture" id=5]
+[ext_resource path="res://src/Levels/CreditsLevel.gd" type="Script" id=6]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Objects/ExitLevelArea2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Campfire.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/mine/tilesetVillage.tres" type="TileSet" id=10]
+[ext_resource path="res://assets/UI_theme_bitPotion.tres" type="Theme" id=11]
+[ext_resource path="res://assets/fonts/BitPotion Full Extended/BitPotionExt.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "start_level"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3, 8.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_music"
+}, {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UILayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("UILayer/ColorRect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_cutscene"
+}, {
+"args": [  ],
+"method": "end_cutscene"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 12 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 100, 3 )
+
+[node name="CreditsLevel" type="Node2D"]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -166.794 ],
+"_edit_vertical_guides_": [ 640.213 ]
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start_level"
+anims/start_level = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enable = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 31 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_top = -32.0
+margin_right = 640.0
+margin_bottom = 328.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 31 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+margin_top = -32.0
+margin_right = 640.0
+margin_bottom = 328.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 31 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+margin_top = -32.0
+margin_right = 640.0
+margin_bottom = 328.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 296.198
+margin_top = 48.0
+margin_right = 336.198
+margin_bottom = 88.0
+theme = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThankYou" type="Label" parent="Control"]
+anchor_left = -2.08
+anchor_top = 0.1
+anchor_right = 3.1
+anchor_bottom = 0.95
+margin_left = -0.799995
+margin_top = -1.0
+margin_right = -7.62939e-06
+margin_bottom = -1.0
+theme = SubResource( 3 )
+text = "KEY_THANK_YOU"
+align = 1
+autowrap = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Control/ThankYou"]
+position = Vector2( -212.198, -54.9764 )
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/ThankYou/StaticBody2D"]
+position = Vector2( 315.536, 65.148 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="MadeBy" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -84.0
+margin_top = 12.0
+margin_right = 84.0
+margin_bottom = 94.0
+text = "KEY_MADE_BY"
+align = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Assets1" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -68.1978
+margin_top = 60.0
+margin_right = -28.1978
+margin_bottom = 227.0
+text = "Clembod
+Sven
+Dray
+cassala
+DarkPixel
+OcO
+Admurin
+Jacorre
+NYKNCK
+"
+align = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Assets2" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 19.8022
+margin_top = 60.0
+margin_right = 81.8022
+margin_bottom = 227.0
+text = "Elthen
+Aethrall
+Trixie
+LuizMelo
+Joeb Rogers
+Emilio Coppola
+Tim Beek
+GDQuest
+David KBD"
+align = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UserInterface" parent="UILayer" instance=ExtResource( 7 )]
+
+[node name="ColorRect" type="ColorRect" parent="UILayer"]
+margin_right = 640.0
+margin_bottom = 360.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fireplace" parent="." instance=ExtResource( 9 )]
+position = Vector2( 328, 304 )
+frame = 2
+
+[node name="Props" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 16
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 1310737, 30, 0 )
+
+[node name="Stringstar" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262172, 1, 0, 393247, 6, 0, 458778, 19, 1, 458779, 4, 0, 458780, 7, 0, 458781, 19, 2, 458784, 5, 0, 524312, 2, 0, 524313, 2, 1, 524314, 16, 16, 524315, 16, 5, 524316, 16, 4, 524317, 16, 4, 524318, 16, 5, 524319, 16, 4, 524320, -1610612719, 1, 524321, -1610612717, 2, 589849, -1073741805, 0, 589850, -1073741808, 4, 589851, 17, 4, 589852, 17, 5, 589853, 16, 0, 589854, 16, 0, 589855, 16, 0, 589856, -1610612720, 5, 589857, -1610612717, 1, 655368, 1, 0, 655385, -1073741805, 0, 655386, -1073741808, 5, 655387, 16, 0, 655388, 16, 0, 655389, 16, 0, 655390, 17, 6, 655391, 17, 7, 655392, -1610612720, 4, 655393, -1610612717, 1, 720921, -1073741805, 0, 720922, -1073741807, 1, 720923, 1610612752, 5, 720924, 1610612752, 4, 720925, 1610612752, 5, 720926, 1610612752, 4, 720927, 1610612752, 4, 720928, 1610612753, 0, 720929, -1610612717, 0, 786432, 0, 0, 786439, 3, 0, 786458, 0, 0, 786459, 12, 0, 786460, 11, 0, 786461, 1610612755, 2, 786462, 11, 0, 786463, 1610612755, 2, 786464, 10, 0, 851976, 5, 0, 851979, 7, 0, 917510, -1073741805, 0, 917511, 17, 1, 917512, 16, 5, 917513, 16, 5, 917514, 16, 14, 917515, 16, 15, 917516, 2, 3, 917517, 2, 4, 983046, -1073741805, 1, 983047, -2147483632, 5, 983048, 16, 0, 983049, 17, 6, 983050, 17, 7, 983051, -536870896, 5, 983052, -1610612717, 2, 1048582, -1073741805, 0, 1048583, -1073741807, 0, 1048584, 1073741840, 5, 1048585, 1073741840, 5, 1048586, 1073741840, 5, 1048587, 1610612753, 0, 1048588, -1610612717, 2, 1114119, 12, 0, 1114120, 1610612755, 1, 1114121, 11, 0, 1114122, 10, 0, 1114123, 11, 0, 1245193, 3, 0, 1245198, 6, 0, 1245215, 18, 0, 1310727, 19, 0, 1310728, 14, 0, 1310729, 19, 0, 1310730, 19, 1, 1310732, 19, 2, 1310733, 19, 0, 1310734, 19, 0, 1310735, 19, 1, 1310736, 4, 0, 1310737, 19, 1, 1310738, 19, 1, 1310739, 19, 1, 1310741, 19, 0, 1310742, 14, 0, 1310743, 19, 1, 1310756, 19, 2, 1310757, 14, 0, 1310758, 19, 2, 1310759, 15, 0, 1376256, 16, 0, 1376257, 16, 1, 1376258, 16, 2, 1376259, 16, 3, 1376260, 16, 0, 1376261, 17, 6, 1376262, 17, 7, 1376263, 16, 4, 1376264, 16, 4, 1376265, 16, 4, 1376266, 16, 17, 1376267, 16, 4, 1376268, 16, 4, 1376269, 16, 4, 1376270, 16, 4, 1376271, 16, 4, 1376272, 16, 4, 1376273, 16, 4, 1376274, 16, 4, 1376275, 16, 4, 1376276, 16, 4, 1376277, 16, 4, 1376278, 16, 6, 1376279, 16, 7, 1376280, 16, 8, 1376281, 16, 8, 1376282, 16, 10, 1376283, 16, 15, 1376284, 16, 16, 1376285, 16, 4, 1376286, 16, 4, 1376287, 16, 4, 1376288, 16, 14, 1376289, 16, 15, 1376290, 16, 16, 1376291, 16, 4, 1376292, 16, 1, 1376293, 16, 2, 1376294, 16, 3, 1376295, 16, 14, 1507319, 16, 0, 1507320, 16, 0, 1507321, 16, 0, 1507322, 16, 0, 1507323, 16, 0, 1507324, 16, 0, 1507325, 16, 0, 1507326, 16, 0, 1507327, 16, 0, 1441792, 16, 0, 1441793, 16, 0, 1441794, 16, 0, 1441795, 16, 0, 1441796, 16, 0, 1441797, 16, 0, 1441798, 16, 0, 1441799, 16, 0, 1441800, 16, 0, 1441801, 16, 0, 1441802, 16, 0, 1441803, 16, 0, 1441804, 16, 0, 1441805, 16, 0, 1441806, 17, 4, 1441807, 17, 5, 1441808, 16, 0, 1441809, 16, 0, 1441810, 16, 0, 1441811, 16, 0, 1441812, 16, 17, 1441813, 16, 0, 1441814, 16, 0, 1441815, 16, 0, 1441816, 16, 0, 1441817, 16, 0, 1441818, 16, 0, 1441819, 16, 0, 1441820, 16, 0, 1441821, 16, 0, 1441822, 16, 0, 1441823, 16, 0, 1441824, 16, 0, 1441825, 17, 8, 1441826, 17, 9, 1441827, 16, 0, 1441828, 16, 0, 1441829, 16, 0, 1441830, 16, 0, 1441831, 16, 0, 1441832, 16, 0, 1441833, 16, 0, 1441834, 16, 0, 1441835, 16, 0, 1441836, 16, 0, 1441837, 16, 0, 1441838, 16, 0, 1441839, 16, 0, 1441840, 16, 0, 1441841, 16, 0, 1441842, 16, 0, 1441843, 16, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 296, 315.996 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 360
+
+[node name="ExitLevel" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 175 )
+input_pickable = false
+next_scene_path = "res://src/Screens/EndScreen.tscn"
+
+[node name="ExitLevel2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 640, 179 )
+input_pickable = false
+next_scene_path = "res://src/Screens/EndScreen.tscn"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="body_entered" from="ExitLevel" to="." method="_on_ExitLevel_body_entered"]
+[connection signal="body_entered" from="ExitLevel2" to="." method="_on_ExitLevel_body_entered"]
+
+[editable path="ExitLevel"]
+[editable path="ExitLevel2"]

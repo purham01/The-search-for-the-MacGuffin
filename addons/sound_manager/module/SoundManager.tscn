@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/sound_manager/module/internal_scripts/SoundManager.gd" type="Script" id=1]
+
+[node name="SoundManager" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+Default_Sounds_Properties = {
+"BGM": {
+"Pitch": 1,
+"Volume": -16
+},
+"BGS": {
+"Pitch": 1,
+"Volume": 0
+},
+"ME": {
+"Pitch": 1,
+"Volume": 0
+},
+"SE": {
+"Pitch": 1,
+"Volume": 0
+}
+}
+preload_resources = true

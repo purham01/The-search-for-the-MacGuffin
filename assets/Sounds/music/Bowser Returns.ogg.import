@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bowser Returns.ogg-a80ee13759e04dd7105b9c680bfc8d08.oggstr"
+
+[deps]
+
+source_file="res://assets/Sounds/music/Bowser Returns.ogg"
+dest_files=[ "res://.import/Bowser Returns.ogg-a80ee13759e04dd7105b9c680bfc8d08.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

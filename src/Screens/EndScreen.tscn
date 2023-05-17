@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Screens/EndScreen.gd" type="Script" id=8]
+[ext_resource path="res://assets/Tilesets and world/stringstar fields/background_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/fonts/BitPotion Full Extended/BitPotionExt.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://assets/Tilesets and world/stringstar fields/background_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/Tilesets and world/stringstar fields/background_0.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 16 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="EndScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+process_mode = 0
+smoothing_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enable = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 31 )
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_top = -32.0
+margin_right = 640.0
+margin_bottom = 328.0
+texture = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 31 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+margin_top = -32.0
+margin_right = 640.0
+margin_bottom = 328.0
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 31 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+margin_top = -32.0
+margin_right = 640.0
+margin_bottom = 328.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = -316.0
+margin_top = 35.0
+margin_right = 315.0
+margin_bottom = 91.0
+text = "KEY_CONGRATULATIONS"
+autowrap = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.5
+margin_top = -80.0
+margin_right = 181.5
+margin_bottom = -23.0
+rect_scale = Vector2( 1.02345, 0.928401 )
+theme = SubResource( 2 )
+text = "stats"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.34
+anchor_top = 0.444
+anchor_right = 0.66
+anchor_bottom = 0.65
+margin_left = -0.100006
+margin_top = 10.16
+margin_right = 0.0999756
+margin_bottom = 10.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="CanvasLayer/Menu" instance=ExtResource( 3 )]
+margin_right = 205.0
+margin_bottom = 34.0
+text = "KEY_PLAY_AGAIN"
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="QuitButton" parent="CanvasLayer/Menu" instance=ExtResource( 4 )]
+margin_top = 38.0
+margin_right = 205.0
+margin_bottom = 73.0
+text = "KEY_QUIT"

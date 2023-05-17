@@ -1,0 +1,18 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "You can use [color=#A5EFAC]A and D[/color] to move left and right.\nTo jump simply press [color=#A5EFAC]W[/color].\nYou can also dash by pressing [color=#A5EFAC]SHIFT[/color].\nIf you're having trouble you can always press [color=#A5EFAC]E[/color] to talk to me again.\nOh, and, if you see any chests, why don't you try hitting them a couple of times?\nYou might be surprised..."
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619981553 – kopija.json",
+		"name": "MovementTutorial"
+	}
+}

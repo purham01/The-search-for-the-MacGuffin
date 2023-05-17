@@ -1,0 +1,18 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Pritisnite [color=#A5EFAC]X ili LIJEVI KLIK MIŠA[/color] kako bi napali! \nAko potrefite pritisak možete ulančati svoje napade!\nTakođer možeš napraviti napad tijekom zaleta [color=#A5EFAC]pritiščući NAPAD tijekom ZALETA[/color]!\nKako bi izbjegli napad pristisnite [color=#A5EFAC]S[/color]. \nAko pritisnete [color=#A5EFAC]S dok se krećete[/color] možete kliznuti pored neprijatelja!\nTakođer možete koristiti napitke pristikom na gumbe [color=#A5EFAC]1, 2 i 3[/color].\nSretno!"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619983793 – kopija.json",
+		"name": "CombatTutorialCRO"
+	}
+}

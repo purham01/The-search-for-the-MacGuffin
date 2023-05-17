@@ -1,0 +1,18 @@
+{
+	"events": [
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Press [color=#A5EFAC]X or the LEFT MOUSE BUTTON[/color] to attack. \nIf you time it correctly you can chain your attack together!\nYou can also do a dash attack by [color=#A5EFAC]pressing X while DASHING[/color]!\nTo dodge attacks press [color=#A5EFAC]S[/color]. \nIf you press [color=#A5EFAC]S while moving[/color] you can slide through enemies!\nYou can also use potions by pressing the numbers [color=#A5EFAC]1, 2 and 3[/color].\nGood luck!"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619983793.json",
+		"name": "CombatTutorial"
+	}
+}

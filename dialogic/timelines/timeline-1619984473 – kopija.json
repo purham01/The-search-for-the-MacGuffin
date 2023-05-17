@@ -1,0 +1,23 @@
+{
+	"events": [
+		{
+			"definition": "1620143654-894",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Hmm...\nSeems you've run up against a wall!\nWhy don't you try [color=#cc0000]WALL JUMPING[/color]?\nSimply move towards the wall and press jump and you'll stick to it like glue!"
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619984473 – kopija.json",
+		"name": "WallJumpTutorial"
+	}
+}

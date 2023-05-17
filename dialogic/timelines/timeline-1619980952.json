@@ -1,0 +1,81 @@
+{
+	"events": [
+		{
+			"condition": "==",
+			"definition": "1619994548-146",
+			"value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Ah, ipak ste se vratili!"
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Želite li da te naučim kako igrati?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"definition": "1619994548-146",
+			"operation": "=",
+			"set_value": "0"
+		},
+		{
+			"emit_signal": "tutorial_changed"
+		},
+		{
+			"change_timeline": "timeline-1619981553.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "[wave amp=50 freq=2]Ah...[/wave] Što uopće radim ovdje..."
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.5
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"condition": "==",
+			"definition": "1619994548-146",
+			"value": "0"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Što?!\nVeć ste se zaboravili kretati!?\nUh...\nPobrinite se da ovaj puta slušašate pažljivo!"
+		},
+		{
+			"change_timeline": "timeline-1619981553.json"
+		},
+		{
+			"endbranch": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619980952.json",
+		"name": "StartTalkAgainCRO"
+	}
+}

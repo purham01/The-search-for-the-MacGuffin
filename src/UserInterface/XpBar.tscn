@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Menu and UI/dray-hp-bar/xp-bar-progress2.png" type="Texture" id=1]
+[ext_resource path="res://assets/Menu and UI/dray-hp-bar/xp-bar-under.png" type="Texture" id=2]
+[ext_resource path="res://assets/Menu and UI/dray-hp-bar/xp-bar-over2.png" type="Texture" id=3]
+[ext_resource path="res://src/UserInterface/XpBar.gd" type="Script" id=4]
+
+[node name="XpBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XpProgressBar" type="TextureProgress" parent="."]
+margin_right = 21.0
+margin_bottom = 4.0
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateTween" type="Tween" parent="."]
+
+[node name="UpdateTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LeveledUpTween" type="Tween" parent="."]
+
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_UpdateTimer_timeout"]
+[connection signal="tween_completed" from="LeveledUpTween" to="." method="_on_LeveledUpTween_tween_completed"]

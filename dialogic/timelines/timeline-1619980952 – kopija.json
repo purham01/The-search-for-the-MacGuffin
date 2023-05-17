@@ -1,0 +1,81 @@
+{
+	"events": [
+		{
+			"condition": "==",
+			"definition": "1619994548-146",
+			"value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Ah, back again after all!"
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Want me to teach you how to play?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"definition": "1619994548-146",
+			"operation": "=",
+			"set_value": "0"
+		},
+		{
+			"emit_signal": "tutorial_changed"
+		},
+		{
+			"change_timeline": "timeline-1619981553 – kopija.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "[wave amp=50 freq=2]Sigh...[/wave] What am I even here for..."
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.5
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"endbranch": ""
+		},
+		{
+			"condition": "==",
+			"definition": "1619994548-146",
+			"value": "0"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "What?\nYou forgot how to move already?!\nUgh..\nMake sure that this time you listen closely!"
+		},
+		{
+			"change_timeline": "timeline-1619981553 – kopija.json"
+		},
+		{
+			"endbranch": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619980952 – kopija.json",
+		"name": "StartTalkAgain"
+	}
+}

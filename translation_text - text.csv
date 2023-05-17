@@ -1,0 +1,50 @@
+,en,hr
+KEY_TITLE,The search for the MacGuffin,Potraga za MacGuffinom
+KEY_START_GAME,Play,Počni igru
+KEY_RETRY,Retry,Pokušaj ponovno
+KEY_QUIT,Quit,Izađi iz igre
+KEY_PLAY_AGAIN,Play again,Igraj ponovno
+KEY_CONGRATULATIONS,"Congratulations, you finished the demo!","Svaka čast, završili ste demo!"
+KEY_STATS,"You died %s times. 
+Your final level was %s.","Umrli ste %s puta. 
+Vaš konačan nivo je %s."
+KEY_PAUSED,Paused,Pauzirano
+KEY_MAIN_MENU,Main Menu,Glavni Izbornik
+KEY_DEATH_MESSAGE,You died.,Umrli ste.
+KEY_WIZARD_NAME,Wizard Sven,Čarobnjak Sven
+KEY_YES,Yes,Da
+KEY_NO,No,Ne
+KEY_BLOB,Blob of frustration,Blob frustracije
+KEY_UNDEAD_EXECUTIONER,Undead Executioner,Neživi Krvnik
+KEY_ULTIMATE_EXECUTIONER,Ultimate Executioner,Posljednji Krvnik
+KEY_LEVELSTART,LevelStart,LevelStartCRO
+KEY_NOTICE_BANDIT,NoticeBandit,NoticeBanditCRO
+KEY_WALL_JUMP,WallJumpTutorial,WallJumpTutorialCRO
+KEY_TALK_AGAIN,StartTalkAgain,StartTalkAgainCRO
+KEY_TALK_AGAIN_POS1,Pos1StartTalkAgain,Pos1StartTalkAgainCRO
+KEY_HP_POTIONS,"Lifeforce potions
+Press 1 to use
+Heals Player","Napici života
+Pritisnite 1 da iskoristite
+Puni život igrača"
+KEY_BATTLE_POTIONS,"Battle potions
+Press 2 to use
+Boosts damage","Napici borbe
+Pritisnite 2 da iskoristite
+Pojačava napad"
+KEY_IRONSKIN_POTIONS,"Ironskin potions
+Press 3 to use
+Boosts defense","Napici željezne kože
+Pritisnite 3 da iskoristite
+Pojačava obranu"
+KEY_HP_POT_POPUP,Health potions +1,Napici života +1
+KEY_BATTLE_POT_POPUP,Battle potions +1 ,Napici borbe +1
+KEY_IRONSKIN_POT_POPUP,Ironskin potions +1,Napici željezne kože +1
+KEY_THANK_YOU,Thank you for playing!,Hvala što ste igrali!
+KEY_MADE_BY,"Game by:
+Benjamin Zrakić and Leonardo Andrašić
+Assets by:","Igricu napravili:
+Benjamin Zrakić i Leonardo Andrašić
+Materijale posudili:"
+KEY_BANDIT_DIALOGUE,BanditAfterBoss,BanditAfterBossCRO
+KEY_WIZARD_AFTER_BOSS,WizardAfterBoss,WizardAfterBossCRO

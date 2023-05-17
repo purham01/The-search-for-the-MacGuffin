@@ -1,0 +1,54 @@
+{
+	"events": [
+		{
+			"definition": "1620143640-403",
+			"operation": "=",
+			"set_value": "1"
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Čekaj!\nPogledaj tamo!\nBandit koji jedva čeka da vas zaskoči...\nŠto kažete da ga vi sredite prvi?"
+		},
+		{
+			"character": "character-1619978689.json",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Želite li da vas naučim kako se boriti?"
+		},
+		{
+			"choice": "KEY_YES",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"change_timeline": "timeline-1619983793 – kopija.json"
+		},
+		{
+			"choice": "KEY_NO",
+			"condition": "",
+			"definition": "",
+			"value": ""
+		},
+		{
+			"character": "character-1619978689.json",
+			"portrait": "",
+			"text": "Uh...\nDjeca ovih dana..."
+		},
+		{
+			"close_dialog": "",
+			"transition_duration": 0.2
+		},
+		{
+			"endbranch": ""
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1619983846.json",
+		"name": "NoticeBanditCRO"
+	}
+}

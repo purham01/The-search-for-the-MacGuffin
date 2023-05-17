@@ -1,0 +1,49 @@
+{
+	"glossary": [
+
+	],
+	"variables": [
+		{
+			"id": "1620845017-339",
+			"name": "boss_fight_started",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1619994548-146",
+			"name": "ended_tutorial",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1620927909-648",
+			"name": "talked_to_bandit",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1621112656-648",
+			"name": "ultimate_boss",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1620143640-403",
+			"name": "WizardPosition1",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1620143654-894",
+			"name": "WizardPosition2",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1620144375-171",
+			"name": "WizardPosition0",
+			"type": 0,
+			"value": "0"
+		}
+	]
+}

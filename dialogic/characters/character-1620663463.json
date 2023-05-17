@@ -1,0 +1,21 @@
+{
+	"color": "#ffd06f18",
+	"default_speaker": false,
+	"description": "Bandit koji je preživio napad krvnika",
+	"display_name": "",
+	"display_name_bool": true,
+	"id": "character-1620663463.json",
+	"mirror_portraits": false,
+	"name": "Bandit",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100
+}
