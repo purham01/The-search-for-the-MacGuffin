@@ -1,7 +1,7 @@
 # Zavrsni-Rad
  
 Kako bi pokrenuli igru i osigurali da radi najbolje što može:
-1. Otvorite Godot.exe
+1. Otvorite Godot.exe 3.x
 2. Uvezite projekt pritiskom na gumb Uvezi/Import i 
    odaberite mapu Potraga za MacGuffinom te u njoj datoteku project.godot
 3. Pričekajte da se projekt učita
